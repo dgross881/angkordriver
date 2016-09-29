@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/dgross881/jquery-cookie-rails.git
+  revision: 76fe80b6cfe39fa973080b3cce9cee197519537d
+  branch: master
+  specs:
+    jquery-cookie-rails (1.4.1.0)
+
+GIT
   remote: git://github.com/thoughtbot/administrate.git
   revision: c4922bf12435ff36beb270773105b457701a4de4
   branch: rails-5
@@ -329,6 +336,7 @@ DEPENDENCIES
   font-awesome-rails
   foreman
   haml
+  jquery-cookie-rails!
   jquery-rails
   mime-types
   paperclip

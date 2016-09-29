@@ -20,6 +20,7 @@ gem "ckeditor"
 
 #editing
 gem "phrasing", branch: 'new-release-4'
+gem 'jquery-cookie-rails', github: 'dgross881/jquery-cookie-rails', branch: 'master'
 gem "haml"
 
 #images

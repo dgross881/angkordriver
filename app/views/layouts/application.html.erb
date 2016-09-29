@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Angkordriver</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <%= csrf_meta_tags %>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="a-angkordriver">
+  <meta property="og:title" content="angkordriver">
+  <meta property="og:description" content="Offering private tours for trips to Angkor Wat and around Siem Reap.">
+  <meta property="og:url" content="<%= request.original_url %>">
+
+</head>
+<body class='homepage'>
+  <%= render '/shared/navbar' %>
+  <%= yield %>
+  <%= render '/shared/footer' %>
+</body>
+</html>

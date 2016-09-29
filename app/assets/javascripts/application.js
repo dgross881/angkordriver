@@ -17,8 +17,8 @@
 //= services
 //= require jquery.prettyPhoto
 //
+jQuery(function($) {'use strict',
 
-$(window).load(function(){
   // portfolio filter
   var $portfolio_selectors = $('.portfolio-filter >li>a');
   var $portfolio = $('.portfolio-items');

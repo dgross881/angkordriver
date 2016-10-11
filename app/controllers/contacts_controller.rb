@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
       redirect_to contact_path
 		else
       flash[:error] = "That todo item could not be saved."
-      redirect_to todo_list_todo_items_path
+      redirect_to contact_path
 		end
   end
 

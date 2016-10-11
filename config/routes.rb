@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  post "contact/new" => "contacts#new"
+  resources :contacts, only: [:create, :new]
   get "/about" => "pages#about", as: :about
   get "/services" => "pages#services", as: :services
   get "/contact" => "pages#contact", as: :contact

@@ -2796,3 +2796,38 @@ shortcodes page css
 
 }
 
+// FLASH MESSAGES AND ERRORS
+
+.field_with_errors {
+  label{color:#A94442 !important}
+  input,textarea,select{border-color:#A94442 !important}
+}
+
+.alert-notice{@extend .alert-success}
+.alert-alert{@extend .alert-info}
+.alert-error{@extend .alert-danger}
+
+.flash-message {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1060;
+  box-shadow: 0 -1px 10px 0 rgba(0,0,0,.2);
+  .alert {
+    margin: 0;
+    padding: 20px 12px;
+    border-radius: 0;
+    &.alert-order_completed {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 440px) {
+  .flash-message .alert {
+    padding: 20px;
+  }
+}
+

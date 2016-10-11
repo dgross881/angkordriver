@@ -1,0 +1,13 @@
+<% if flash.any? %>
+  <div class='flash-message to-hide'>
+    <% flash.each do |key, value| %>
+      <% key = 'error' if flash[:registration_error] %>
+      <div class="alert flash-msg alert-<%= key %>">
+        <div class='in-wr'>
+          <%= value.to_s.html_safe %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+

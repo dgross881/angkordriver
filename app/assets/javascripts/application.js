@@ -42,4 +42,18 @@ jQuery(function($) {'use strict',
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
 	});
+
+
+  // FLASH MESSAGES
+
+  $(window).load(function() {
+    $('.flash-message.to-hide').delay(4500).slideUp(500);
+  });
+
+  window.show_flash_msg = function(type, message) {
+    $('.flash-message.to-hide').remove();
+    var $fl = $("<div class='flash-message to-hide'><div class='alert flash-msg alert-" + type + "'><div class='in-wr'>" + message + "</div></div></div>");
+    $('body').prepend($fl);
+    $fl.delay(4500).slideUp(500);
+  };
 });

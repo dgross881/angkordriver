@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   namespace :admin do
-
-    root to: "#index"
+    resources :services
+    resources :contacts
+    resources :users
+    root to: "contacts#index"
   end
 
   root to: 'home#index'

@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+roles = %w(superadmin user)
+
+roles.each.with_index(1) do |role, index|
+  Role.create!(name: role) unless Role.find_by(name: role)
+  puts "[#{index}..#{roles.length}] Created Role: #{role}"
+end
+
+User.create!(email: 'chheiyasab@gmail.com', password: 'saya123', roles: Role.where(name: %w(superadmin))) unless User.find_by(email: 'cheiyasab@gmail.com')
+
+

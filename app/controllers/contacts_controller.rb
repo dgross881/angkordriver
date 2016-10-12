@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   def new
   	@contact = Contact.new(contact_params)
 		if @contact.save
+      NotifyMailer.notify_email(@contact).deliver
       flash[:success] = "Thanks for submitting you message we will get back you shortly"
       redirect_to contact_path
 		else

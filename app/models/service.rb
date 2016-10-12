@@ -20,4 +20,8 @@ class Service < ApplicationRecord
 
   # Explicitly do not validate
   do_not_validate_attachment_file_type :image
+
+  with_options presence: true do
+    validates :service_type, :title, :body, :image
+  end
 end

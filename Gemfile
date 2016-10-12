@@ -25,7 +25,7 @@ gem "haml"
 
 #images
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'fog'
 gem "mime-types"
 
 # Bundle edge Rails instead:

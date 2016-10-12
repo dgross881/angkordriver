@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   end
 
   def services
-    binding.pry
     @services = Service.all
   end
 

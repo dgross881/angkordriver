@@ -1,125 +1,36 @@
   <section id="portfolio">
     <div class="container">
         <div class="center">
-           <h2>Portfolio</h2>
-           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+           <h2><%= phrase('portfolio.title') %></h2>
+           <p class="lead"><%= phrase('porfolio.paragraph') %></p>
         </div>
-
 
         <ul class="portfolio-filter text-center">
             <li><a class="btn btn-default active" href="#" data-filter="*">All Tours</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Day Tours</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".html">Half Day Tours</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".wordpress">Lake Tone</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".all_day">Day Tours</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".half_day">Half Day Tours</a></li>
         </ul><!--/#portfolio-filter-->
 
+        <% if @services %>
         <div class="row">
             <div class="portfolio-items">
-                <div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                       <%= image_tag('tonle_sap.jpg', class: 'img-responive') %>
+             <% @services.each do |service|  %>
+               <div class="portfolio-item <%= service.service_type.gsub!(/\W/, '_').downcase %> col-xs-12 col-sm-4 col-md-3">
+                  <div class="recent-work-wrap">
+                        <%= image_tag(service.image.url(:large), class: 'img-responive') %>
                         <div class="overlay">
                             <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="<%= image_path('tonle_sap.jpg') %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                                <h3><a href="#"><%= service.title %></a></h3>
+                                <p><%= service.body %></p>
+                                <a class="preview" href="<%= image_path(service.image.url(:large)) %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                             </div>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item joomla bootstrap col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                       <%= image_tag('tonle_sap.jpg', class: 'img-responive') %>
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="<%= image_path('tonle_sap.jpg') %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item bootstrap wordpress col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <%= image_tag('tonle_sap.jpg', class: 'img-responive') %>
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="<%= image_path('tonle_sap.jpg') %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item joomla wordpress apps col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <%= image_tag('tonle_sap.jpg', class: 'img-responive') %>
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="<%= image_path('tonle_sap.jpg') %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <%= image_tag('tonle_sap.jpg', class: 'img-responive') %>
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="<%= image_path('tonle_sap.jpg') %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item wordpress html apps col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <%= image_tag('tonle_sap.jpg', class: 'img-responive') %>
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="<%= image_path('tonle_sap.jpg') %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item wordpress html col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <%= image_tag('tonle_sap.jpg', class: 'img-responive') %>
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="<%= image_path('tonle_sap.jpg') %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item wordpress html bootstrap col-xs-12 col-sm-4 col-md-3">
-                    <div class="recent-work-wrap">
-                        <%= image_tag('tonle_sap.jpg', class: 'img-responive') %>
-                        <div class="overlay">
-                            <div class="recent-work-inner">
-                                <h3><a href="#">Business theme</a></h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                <a class="preview" href="<%= image_path('tonle_sap.jpg') %>" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-            </div>
+            <% end %>
+          </div>
         </div>
+      <% end %>
     </div>
 </section><!--/#portfolio-item-->
 

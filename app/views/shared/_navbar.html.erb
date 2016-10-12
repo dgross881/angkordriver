@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-xs-4">
-          <div class="top-number"><p><i class="fa fa-phone-square"></i>+855-96-800-7272</p></div>
+          <div class="top-number"><p><i class="fa fa-phone-square"></i><%= phrase('nav.phone_number') %></p></div>
         </div>
         <div class="col-sm-6 col-xs-8">
            <div class="social">
@@ -33,10 +33,10 @@
 
       <div class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li> <%= link_to "Home", root_path %></li>
-            <li><%= link_to 'About',  about_path  %></li>
-            <li><%= link_to 'Services',  services_path  %></li>
-            <li><%= link_to 'Contact',  contact_path  %></li>
+            <li><%= link_to phrase('nav.home'), root_path %></li>
+            <li><%= link_to phrase('nav.about'),  about_path  %></li>
+            <li><%= link_to phrase('nav.services'),  services_path  %></li>
+            <li><%= link_to phrase('nav.contact'),  contact_path  %></li>
           </ul>
         </div>
       </div><!--/.container-->

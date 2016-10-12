@@ -12,13 +12,30 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.cookie
+//= require phrasing
 //= require jquery.isotope.min
 //= require jquery.prettyPhoto
 //= require bootstrap/transition
 //= require bootstrap/collapse
+//= require_tree .
 //
 jQuery(function($) {'use strict',
+
+  // phrasing
+  $(function() {
+    $(document).on('click', 'a', function(e) {
+      if ($(this).find('.phrasable_on').length) {
+        if (e.preventDefault()) {
+          e.preventDefault();
+        } else if (window.event) {
+          window.event.returnValue = false;
+        } else {
+          return false;
+        }
+      }
+    });
+  });
 
   // portfolio filter
   $(window).load(function(){'use strict';

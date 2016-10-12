@@ -2,7 +2,9 @@ class PagesController < ApplicationController
   def about
   end
 
-  def service
+  def services
+    binding.pry
+    @services = Service.all
   end
 
   def contact

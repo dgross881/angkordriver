@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def has_role?(role_name)
     roles.any? { |r| r.name.underscore.to_sym == role_name.to_sym }
   end
+
+  with_options presence: true do
+    validates :service_type, :title, :body, :image
+  end
 end

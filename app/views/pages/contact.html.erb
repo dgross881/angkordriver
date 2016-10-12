@@ -14,10 +14,10 @@
 
                 <div class="col-sm-7 map-content">
                     <address>
-                        <h5>Our Location</h5>
-                        <p>Siem Reap 17251, Cambodia</p>
-                        <p>Phone:+855 96 800 7272<br>
-                        Email Address:chheiyasab@gmail.com</p>
+                        <h5><%= phrase('contact.location') %></h5>
+                        <p><%= phrase('contact.address') %></p>
+                        <p><%= phrase('contact.phone_number') %><br>
+                        <%= phrase('contact.phone_number') %></p>
                     </address>
                 </div>
             </div>
@@ -28,8 +28,8 @@
 <section id="contact-page">
     <div class="container">
         <div class="center">
-            <h2>Drop Your Message</h2>
-            <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2><%= phrase('contact.drop_message') %></h2>
+            <p class="lead"><%= phrase('contact.message_pragraph') %></p>
         </div>
         <div class="row contact-wrap">
             <div class="status alert alert-success" style="display: none"></div>

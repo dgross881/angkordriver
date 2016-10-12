@@ -9,10 +9,11 @@ class ServiceDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    image: PaperclipField,
     title: Field::String,
     body: Field::Text,
+    service_type: ServiceField,
     show_homepage: Field::Boolean,
-    image: PaperclipField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,6 +26,7 @@ class ServiceDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :image,
+    :service_type,
     :title,
     :body,
     :show_homepage,
@@ -35,6 +37,7 @@ class ServiceDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :image,
+    :service_type,
     :title,
     :body,
     :show_homepage,
@@ -47,6 +50,7 @@ class ServiceDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :image,
+    :service_type,
     :title,
     :body,
     :show_homepage

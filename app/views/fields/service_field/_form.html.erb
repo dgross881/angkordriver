@@ -1,0 +1,9 @@
+<div class="field-unit field-unit--string">
+  <div class="field-unit__label">
+    <%= f.label field.attribute %>
+  </div>
+  <div class="field-unit__field">
+    <%= f.select field.attribute, ['All Day', 'Half Day'], selected: 'Half Day', include_blank: true %>
+  </div>
+</div>
+
